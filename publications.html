@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href = "@{/css/publications.css}" rel="stylesheet">
+
+<meta charset="ISO-8859-1">
+	<title>Jay Wang Publications</title>
+</head>
+<body>
+
+<header>
+	<h1>Publications of Professor Jiacun Wang, Ph.D.</h1>
+</header>
+
+<table>
+	<caption>Books</caption>
+	<thead>
+	<tr>
+		<th>Title</th>
+		<th>Publication Year</th>
+		<th>Author 1</th>
+		<th>Author 2</th>
+		<th>ISBN Number</th>
+		<th>Publisher</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr th:each="book : ${books}">
+		<td th:text="${book.titleBook}"></td>
+		<td th:text="${book.publicationYr}"></td>
+		<td th:text="${book.author1}"></td>
+		<td th:text="${book.author2}"></td>
+		<td th:text="${book.isbnNum}"></td>
+		<td th:text="${book.publisher}"></td>
+	</tr>
+	</tbody>
+</table>
+
+<a href="/books/newBook">Add a new book</a>
+
+<br>
+
+<table>
+	<caption>Books Chapters</caption>
+	<thead>
+	<tr>
+		<th>Chapter Title</th>
+		<th>Book Title</th>
+		<th>Publication Year</th>
+		<th>Author 1</th>
+		<th>Author 2</th>
+		<th>Publisher</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr th:each="bookChapter : ${bookChapters}">
+		<td th:text="${bookChapter.titleChapter}"></td>
+		<td th:text="${bookChapter.titleBook}"></td>
+		<td th:text="${bookChapter.publicationYr}"></td>
+		<td th:text="${bookChapter.author1}"></td>
+		<td th:text="${bookChapter.author2}"></td>
+		<td th:text="${bookChapter.publisher}"></td>
+	</tr>
+	</tbody>
+</table>
+
+<br>
+
+
+
+</body>
+</html>
